@@ -6,6 +6,10 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
+echo "Server: ".$server."<br>";
+echo "Database: ".$db."<br>";
+echo "Username: ".$username."<br>";
+
 $conn = new mysqli($server, $username, $password, $db);
 
 // Check connection
