@@ -64,14 +64,13 @@ if ($conn->query($sql) === TRUE) {
     echo "Error dropping table: " . $conn->error;
 }
 echo "<P>";
-
-/* check connection */
+// Check connection
 if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-printf ("System status: %s\n", $mysqli->stat());
+echo "System status: ". mysqli_stat($conn);
+
 
 $conn->close();
 ?>
