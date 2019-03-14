@@ -17,6 +17,7 @@ function config($key = '')
             'products' => 'Products',
             'contact' => 'Contact',
             'phpinfo' => 'Phpinfo',
+            'ClearDB' => 'ClearDB',
         ],
         'template_path' => 'template',
         'content_path' => 'content',
