@@ -66,7 +66,7 @@ function page_content()
 
     $static=True;
     if (! file_exists($path)) {
-        if ($path = 'phpinfo') {
+        if ($path = 'phpinfo' || $path = 'ClearDB') {
             require (getcwd() . '/' . config('content_path') . '/' . $page . '.php');
             $static=False;
         }
