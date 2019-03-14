@@ -65,9 +65,13 @@ if ($conn->query($sql) === TRUE) {
 }
 echo "<P>";
 
-// show db processlist
-$status = explode('  ', mysql_stat($conn));
-print_r($status);
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+
+printf ("System status: %s\n", $mysqli->stat());
 
 $conn->close();
 ?>
