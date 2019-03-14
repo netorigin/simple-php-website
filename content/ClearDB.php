@@ -7,6 +7,8 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
-echo $conn;
-echo "A testing message";
+echo $server;
+echo $username;
+echo $password;
+echo $db;
 ?>
