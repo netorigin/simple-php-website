@@ -63,6 +63,15 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error dropping table: " . $conn->error;
 }
+echo "<P>";
+
+// show db processlist
+$result = mysql_list_processes($conn);
+while ($row = mysql_fetch_assoc($result)){
+    printf("%s %s %s %s %s\n", $row["Id"], $row["Host"], $row["db"],
+        $row["Command"], $row["Time"]);
+}
+mysql_free_result($result);
 
 $conn->close();
 ?>
