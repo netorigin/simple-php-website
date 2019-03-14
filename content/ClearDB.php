@@ -12,6 +12,7 @@ $conn = new mysqli($server, $username, $password, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
+echo "<P>";
 
 // sql to create table
 $sql = "CREATE TABLE MyGuests (
@@ -27,6 +28,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
+echo "<P>";
 
 // sql to insert data to table
 $sql = "INSERT INTO MyGuests (firstname, lastname, email)
@@ -37,6 +39,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+echo "<P>";
 
 // sql to select data
 $sql = "SELECT id, firstname, lastname FROM MyGuests";
@@ -50,6 +53,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
+echo "<P>";
 
 // sql to drop table
 $sql = "DROP TABLE MyGuests";
